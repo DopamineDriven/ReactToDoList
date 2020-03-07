@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default class ToDo extends React.Component{
+    constructor(props) {
+        super(props)
+    }
     render(){
         return(
-            <div>
-                hello there
-            </div>
+            <li>{this.props.item}</li>
         )
     }
 }

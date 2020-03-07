@@ -4,7 +4,10 @@ export default class Newitem extends React.Component{
     render(){
         return(
             <div>
-                New Item
+                <input type="text"/>
+                    <button>
+                        Add Item
+                    </button>
             </div>
         )
     }
