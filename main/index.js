@@ -5,7 +5,7 @@ import ToDoApp from '../components/ToDoApp.js';
 function App() {
     return (
         <div>
-            hola
+            <ToDoApp />
         </div>
     )
 }
