@@ -1,0 +1,27 @@
+{
+  "name": "reacttodolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DopamineDriven/ReactToDoList.git"
+  },
+  "author": "Andrew Ross",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DopamineDriven/ReactToDoList/issues"
+  },
+  "homepage": "https://github.com/DopamineDriven/ReactToDoList#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
+}
