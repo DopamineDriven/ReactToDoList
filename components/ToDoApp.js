@@ -13,11 +13,20 @@ export default class ToDoApp extends React.Component{
             ]
         }
         this.addItem = this.addItem.bind(this)
+        this.deleteItem = this.deleteItem.bind(this)
     }
     // when addItem function is claled we want to update state of list
     addItem(item) {
         let newList = this.state.list
         newList.push(item)
+        this.setState({
+            list: list
+        })
+    }
+
+    deleteItem(index) {
+        let newList = this.state.list
+        newList.splice(index, 1)
         this.setState({
             list: newList
         })
@@ -31,7 +40,10 @@ export default class ToDoApp extends React.Component{
                 <Newitem addItem={this.addItem}/>
                 <ul>
                     {this.state.list.map((item, index) => {
-                        return <ToDo key={index} item={item}/>
+                        return <ToDo 
+                            toDoId={index}
+                            onDelete={this.deleteItem}
+                            key={index} item={item}/>
                     })}
                 </ul>
             </div>

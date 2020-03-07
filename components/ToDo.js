@@ -6,7 +6,13 @@ export default class ToDo extends React.Component{
     }
     render(){
         return(
-            <li>{this.props.item}</li>
+            <li>
+                {this.props.item}
+                <button
+                    onClick={()=>{
+                        this.props.onDelete(this.props.toDoId)
+                        }}>X</button>
+            </li>
         )
     }
 }
