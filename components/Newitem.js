@@ -9,12 +9,19 @@ export default class Newitem extends React.Component{
         }
         // pre-binds preventing from having to bind multiple times
         this.updateText = this.updateText.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     updateText(e) {
         this.setState({
             text: e.target.value
         })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault()
+        this.props.addItem(this.state.text)
+        this.setState({ text: ' ' })
     }
 
     // in html when you create a form with an input element
@@ -30,11 +37,7 @@ export default class Newitem extends React.Component{
                 <input
                     type = "submit"
                     value = "add item"
-                    onClick={(e)=>{
-                        e.preventDefault()
-                        this.props.addItem(this.state.text)
-                        this.setState({ text: ' ' })
-                    }}
+                    onClick={this.handleSubmit}
                 />
             </form>
         )
