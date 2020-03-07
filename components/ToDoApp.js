@@ -20,7 +20,7 @@ export default class ToDoApp extends React.Component{
         let newList = this.state.list
         newList.push(item)
         this.setState({
-            list: list
+            list: newList
         })
     }
 
@@ -36,9 +36,10 @@ export default class ToDoApp extends React.Component{
     render(){
         return(
             <div>
-                <h3>ToDo List App</h3>
+                <h3 className="text-center">ToDo List App</h3>
                 <Newitem addItem={this.addItem}/>
-                <ul>
+                <br/>
+                <ul className="list-group">
                     {this.state.list.map((item, index) => {
                         return <ToDo 
                             toDoId={index}

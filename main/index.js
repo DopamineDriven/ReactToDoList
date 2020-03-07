@@ -4,7 +4,7 @@ import ToDoApp from '../components/ToDoApp.js';
 
 function App() {
     return (
-        <div>
+        <div className="container">
             <ToDoApp />
         </div>
     )

@@ -20,6 +20,9 @@ export default class Newitem extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault()
+        if(this.state.text==='') {
+            return
+        }
         this.props.addItem(this.state.text)
         this.setState({ text: ' ' })
     }
@@ -29,16 +32,20 @@ export default class Newitem extends React.Component{
     // use form!!!
     render(){
         return(
-            <form>
-                <input 
+            <form className="input-group">
+                <input
+                    className="form-control"
                     value = {this.state.text}
                     onChange={this.updateText}
                     type="text"/>
-                <input
-                    type = "submit"
-                    value = "add item"
-                    onClick={this.handleSubmit}
-                />
+                <span className="input-group-btn">
+                    <input
+                        className="btn btn-default"
+                        type = "submit"
+                        value = "add item"
+                        onClick={this.handleSubmit}
+                    />
+                </span>
             </form>
         )
     }

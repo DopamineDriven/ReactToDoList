@@ -6,9 +6,10 @@ export default class ToDo extends React.Component{
     }
     render(){
         return(
-            <li>
+            <li className="list-group-item">
                 {this.props.item}
                 <button
+                    className="badge"
                     onClick={()=>{
                         this.props.onDelete(this.props.toDoId)
                         }}>X</button>
