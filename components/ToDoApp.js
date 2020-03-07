@@ -30,8 +30,8 @@ export default class ToDoApp extends React.Component{
                 <h3>ToDo List App</h3>
                 <Newitem addItem={this.addItem}/>
                 <ul>
-                    {this.state.list.map((item) => {
-                        return <ToDo item={item}/>
+                    {this.state.list.map((item, index) => {
+                        return <ToDo key={index} item={item}/>
                     })}
                 </ul>
             </div>

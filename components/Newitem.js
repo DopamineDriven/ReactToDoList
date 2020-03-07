@@ -17,17 +17,26 @@ export default class Newitem extends React.Component{
         })
     }
 
-
+    // in html when you create a form with an input element
+    // when hitting enter, the submit button is automatically clicked
+    // use form!!!
     render(){
         return(
-            <div>
+            <form>
                 <input 
+                    value = {this.state.text}
                     onChange={this.updateText}
                     type="text"/>
-                <button
-                    onClick={()=>{this.props.addItem(this.state.text)}}
-                >Add Item</button>
-            </div>
+                <input
+                    type = "submit"
+                    value = "add item"
+                    onClick={(e)=>{
+                        e.preventDefault()
+                        this.props.addItem(this.state.text)
+                        this.setState({ text: ' ' })
+                    }}
+                />
+            </form>
         )
     }
 }
